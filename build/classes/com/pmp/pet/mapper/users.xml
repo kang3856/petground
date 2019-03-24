@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+  PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+  "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="users">
+	
+
+	<select id="selectOne" parameterType="User" resultType="User">
+		SELECT user_no userNO , id, password, sex,nickname,birthday,email,user_picture_url userPictureUrl, camp,user_date userDate
+		FROM users
+		WHERE id = #{id} AND password=#{password}
+	</select>
+	<update id="userUpdate" parameterType="User">
+			UPDATE users
+			SET email = #{email},
+			birthday = #{birthday} 
+		WHERE user_no = #{userNo}
+	</update>
+</mapper>  
+
+
+
+

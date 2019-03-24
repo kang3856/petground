@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+  PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+  "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="pride">
+	<select id="selectList" resultType="Pride"  parameterType="int">
+	SELECT p.pride_contents prideContents, pride_picture_url pridePictureUrl ,p.user_no userNo
+	FROM pride p, pride_picture pp
+	WHERE p.pride_no = pp.pride_no AND p.user_no = #{userNo}
+	</select>
+</mapper>  
+
+
+
+

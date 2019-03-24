@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+  PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+  "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="pets">
+	
+
+	<select id="selectList" parameterType="int" resultType="Pet">
+	SELECT pet_no petNo, pet_name petName, pet_birthday petBirthday, pet_sex petSex, pet_picture petPicture, user_no userNo,
+	p.kind_no kindNo, pet_date petDate , t.pet_type petType	
+	FROM pets p , pet_type t
+	WHERE user_no = #{petNo} AND p.kind_NO = t.kind_no
+	</select>
+	
+	<select id="selectOne" resultType="Pet" parameterType="String">
+		SELECT p.pet_no petNo, p.pet_name petName, p.pet_birthday petBirthday, p.pet_sex petSex, p.pet_picture petPicture, p.user_no userNo,
+		p.kind_no kindNo, p.pet_date petDate , t.pet_type petType,t.kind
+		FROM pets p , pet_type t
+		WHERE pet_no = #{pet_no} AND p.kind_NO = t.kind_no
+	</select>
+
+ 	<insert id="insert" parameterType="Pet" >
+	INSERT INTO pets (pet_no,pet_name ,pet_birthday ,pet_sex,pet_picture,user_no,kind_no,pet_date)
+	VALUES (pets_seq.nextval,#{petName},#{petBirthDay},#{petSex},#{petPicture},#{userNo},#{kindNo},SYSTIMESTAMP)
+	</insert> 
+	<update id="petupdate" parameterType="Pet">
+		UPDATE pets
+		SET kind_no = #{kindNo},
+		pet_name = #{petName},
+		pet_birthday = #{petBirthDay},
+		pet_sex = #{petSex}
+		WHERE pet_no = #{petNo}
+	</update>
+	
+	<delete id="delete" parameterType="int">
+		DELETE pets
+		WHERE pet_no = #{no}
+	</delete>
+</mapper>  
+
+
+
+

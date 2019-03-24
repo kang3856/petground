@@ -1,0 +1,104 @@
+.contents_imgList{
+    width: 80%;
+    margin: auto;
+}
+.contents_imgPart{
+    margin-left: 32px;
+    margin-top: 20px;
+    margin-bottom: 20px;
+    padding: 3px;
+    position: relative;
+    width: 300px;
+    height: 300px;
+    display: inline-block;
+
+}
+.contents_imgPopup{
+    margin-top: 10px;
+    margin-left: 2px;
+    display: none;
+    position: absolute;
+    width:300px;
+    height:300px;
+    top:0;
+    left:0;
+    background-color: rgba(0,0,0,.8);
+    /*background: red;*/
+}
+
+.contents_imgCopy{
+    /*display: none;*/
+    font-size: 30px;
+    position: absolute;
+    top:3%;
+    right: 3%;
+    opacity: .8;
+}
+.contents_imgPart2
+{
+    font-size: 30px;
+    display: none;
+    position: absolute;
+    top: 30%;
+    left: 30%;
+    background-color: rgba(0,0,0,.8);
+}
+/*.contents_imgPart2 span:nth-child(1)*/
+/*{*/
+/*position: absolute;*/
+/*}*/
+.contents_imgPart2 span:nth-child(1)
+{
+    /*margin-top: 60px;*/
+    position: absolute;
+}
+.contents_imgPart2 span:nth-child(2)
+{
+    margin-top: 60px;
+    position: absolute;
+    width:200px;
+}
+
+.contents_imgList li{
+    display: inline-block;
+}
+.contents_imgPart img{
+    border-top: 10px solid #1A237E;
+    /*border-top: 10px solid #B71C1C;*/
+    /*border-top: 10px solid #880E4F;*/
+    /*border-top: 10px solid #4A148C;*/
+    /*border-top: 10px solid #311B92;*/
+    /*border-top: 10px solid #3E2723;*/
+    /*border-top: 10px solid #546E7A;*/
+    /*border-top: 10px solid #BF360C;*/
+    width: 300px;
+    height: 300px;
+    object-fit: cover;
+    cursor: pointer;
+}
+
+.pride_img1:hover .pride_pop {
+    display: block;
+}
+.pride_pop{
+     width: 300px;
+     height: 300px;
+     background-color: rgba(0,0,0,.7);
+     position: absolute;
+     display: none;
+ }
+ .pride_pop_content2{
+    margin-top: 50px;
+}
+.pride_pop_content{
+    position: absolute;
+    top: 30%;
+    left: 30%;
+    color: white;
+    text-shadow: 2px 2px black;
+    font-size: 30px;
+}
+..pride_img2 img{
+    border-top:10px solid red;
+}
+
